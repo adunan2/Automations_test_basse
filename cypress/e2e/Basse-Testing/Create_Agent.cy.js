@@ -30,7 +30,6 @@ describe('Create Members', () => {
         let email = UserName + "@fakeemail.com";
         let FirstName = "Test " + Name1;
         let LastName = "Test " + Name2;
-
         cy.get('[href="/admin/agents"]').click();
         cy.get('[href="/admin/agents/new/"]').click();
         cy.get('[id="agent-Person.FirstName"]').type(FirstName);
@@ -39,6 +38,5 @@ describe('Create Members', () => {
         cy.get('[id="agent-CommissionsPercentage"]').clear();
         cy.get('[id="agent-CommissionsPercentage"]').type(porcent);
         cy.get('[class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"]').click();
-
     })
 })
