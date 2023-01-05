@@ -20,7 +20,7 @@ describe('Create Members', () => {
              })      
          })  
      })
-     it('Add an Client', function() {
+     it('Add a Client', function() {
         const aleatorio = Math.round(Math.random()*10000);
         const number = Math.round(Math.random()*10000000000);
         const address = Math.round(Math.random()*100);
