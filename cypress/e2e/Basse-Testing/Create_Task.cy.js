@@ -34,10 +34,6 @@ describe('Create Members', () => {
         cy.get('[href="/members/hr-request/new/"]').click();
         cy.get('[id="member-request-MemberNeed"]').type(What_do_you_need);
         cy.get('[id="member-request-MemberNeedDescription"]').type(other);
-        cy.get('[class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"]').click();
-        
-
-
-        andres
+        cy.get('[class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"]').click(); 
     })
 })
