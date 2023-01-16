@@ -1,5 +1,5 @@
-//cyp-001//
-describe('Create Agent', () => {
+//cyp-0003 "Create, Edit, Delete, Active"//
+describe('Agent', () => {
     beforeEach("LOGIN", function(){
          cy.visit("http://localhost:3000/auth/login");
          cy.url().should('include','/auth/login')
@@ -21,7 +21,7 @@ describe('Create Agent', () => {
              })      
          })  
      })
-     it('Add an Agent', function() {
+     it('Create an Agent', function() {
         const aleatorio = Math.round(Math.random()*1000);
         const porcent = Math.round(Math.random()*100);
         const Name1 = Math.round(Math.random()*100);
@@ -38,5 +38,26 @@ describe('Create Agent', () => {
         cy.get('[id="agent-CommissionsPercentage"]').clear();
         cy.get('[id="agent-CommissionsPercentage"]').type(porcent);
         cy.get('[class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"]').click();
+    })
+    it('Edit an Agent', function() {
+        cy.get('[href="/admin/agents"]').click();
+        cy.get(':nth-child(1) > .block > .py-6 > .min-w-0.flex > .min-w-0').click();
+        cy.get('[class="bg-white py-2 px-4 mr-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"]').click();
+        cy.get('[id="agent-Person.FirstName"]').type("1");
+        cy.get('[class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"]').click();
+    })
+    it('Delete an Agent', function() {
+        cy.get('[href="/admin/agents"]').click();
+        cy.get(':nth-child(1) > .block > .py-6 > .min-w-0.flex > .min-w-0').click();
+        cy.get('[class="bg-red-600 py-2 px-4 mr-2 border border-red-400 rounded-md shadow-sm text-sm font-medium text-white hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"]').click();
+        cy.get('[class="swal2-confirm bg-red-600 w-full rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"]').click();
+    })
+    it('Active an Agent', function() {
+        cy.get('[href="/admin/agents"]').click();
+        cy.get('[class="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"]').click();
+        cy.get('[value="inactive"]').check();
+        cy.get('[class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"]').click();
+        cy.get('[class="min-w-0 flex-1 px-4 md:grid md:grid-cols-7 md:gap-8 pr-12"]').click();
+        cy.get('[class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-green-500"]').click();
     })
 })
