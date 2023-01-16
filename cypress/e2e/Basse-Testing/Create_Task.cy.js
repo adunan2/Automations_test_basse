@@ -1,4 +1,4 @@
-describe('Create Members', () => {
+describe('Create Task', () => {
     beforeEach("LOGIN", function(){
          cy.visit("http://localhost:3000/auth/login");
          cy.url().should('include','/auth/login')
@@ -20,7 +20,7 @@ describe('Create Members', () => {
              })      
          })  
      })
-     it('Add an Client', function() {
+     it('Add a Task', function() {
         const need = Math.round(Math.random()*100);
         const information = Math.round(Math.random()*100);
         let create_task = "Task " + need ;

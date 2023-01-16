@@ -1,4 +1,4 @@
-describe('Create Members', () => {
+describe('Create Client', () => {
     beforeEach("LOGIN", function(){
          cy.visit("http://localhost:3000/auth/login");
          cy.url().should('include','/auth/login')
