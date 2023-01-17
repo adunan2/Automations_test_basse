@@ -1,4 +1,5 @@
-describe('Create Task', () => {
+//cyp-0005 "Add, Mark as Resolved the Task (Checkbox), Mark as Resolved the Task Button (Mark as Resolved) "
+describe('Task', () => {
     beforeEach("LOGIN", function(){
          cy.visit("http://localhost:3000/auth/login");
          cy.url().should('include','/auth/login')
@@ -35,5 +36,16 @@ describe('Create Task', () => {
         cy.get('[id="member-request-MemberNeed"]').type(What_do_you_need);
         cy.get('[id="member-request-MemberNeedDescription"]').type(other);
         cy.get('[class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"]').click(); 
+    })
+    it('Mark as Resolved the Task (Checkbox)', function() {
+        cy.get('[href="/admin/tasks"]').click();
+        cy.get(':nth-child(1) > .group > .relative').click();
+        cy.get('[class="swal2-confirm bg-[#0CBA91] w-full rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"]').click(); 
+    })
+    it('Mark as Resolved the Task Button (Mark as Resolved)', function() {
+        cy.get('[href="/admin/tasks"]').click();
+        cy.get(':nth-child(1) > .py-4').click();
+        cy.get('[class="bg-green-500 text-white p-2 rounded hover:bg-green-600 flex px-3"]').click(); 
+        cy.get('[class="swal2-confirm bg-[#0CBA91] w-full rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"]').click();
     })
 })
