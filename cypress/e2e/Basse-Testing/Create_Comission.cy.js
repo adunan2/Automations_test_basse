@@ -1,4 +1,4 @@
-//cyp-0006 "Create, Edit, Deactivate, Enable"
+//cyp-0006 "Create, Edit, Delete, Filter, view "Commissions" title, view "clear" button, view pagination"
 describe('Comission', () => {
     beforeEach("LOGIN", function(){
          cy.visit("http://localhost:3000/auth/login");
