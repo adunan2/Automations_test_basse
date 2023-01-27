@@ -26,6 +26,6 @@ module.exports = (on, config) => {
   on('task', {
     downloads:  (downloadspath) => {
       return fs.readdirSync(downloadspath)
-    }
+    } 
   })
 }
