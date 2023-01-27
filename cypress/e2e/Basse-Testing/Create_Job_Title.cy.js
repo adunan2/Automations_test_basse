@@ -1,4 +1,4 @@
-//cyp-0010 "Add Job Title, Edit, Copy, Delete"
+//cyp-0010 "Add Job Title, Edit_1, Edit_2, Delete_1, Delete_2"
 describe('Create Job Title', () => {
     beforeEach("LOGIN", function(){
         cy.visit("http://localhost:3000/auth/login");
@@ -19,7 +19,6 @@ describe('Create Job Title', () => {
                 })
                 cy.get(':nth-child(2) > a').click();
             })
-            
         })
     })
     it('Add a Job Title', function() {
