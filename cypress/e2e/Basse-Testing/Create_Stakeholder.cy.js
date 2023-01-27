@@ -39,7 +39,7 @@ describe('Create Stakeholder', () => {
         cy.get('[id="stakeholder-Person.Email"]').type(new_stakeholder);
         cy.get('.mt-4 > .inline-flex').click();  
     })
-    it('Edit a Stakeholder', function() {
+    it('Edit Stakeholder', function() {
 
         cy.get('[href="/admin/stakeholders"]').click();
         cy.get(':nth-child(1) > a > .bg-white > .col-span-3').click();
@@ -47,7 +47,7 @@ describe('Create Stakeholder', () => {
         cy.get('[id="stakeholder-Person.FirstName"]').type(" edit");
         cy.get('[class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"]').click();
     })
-    it('Delete a Stakeholder', function() {
+    it('Delete Stakeholder', function() {
 
         cy.get('[href="/admin/stakeholders"]').click();
         cy.get(':nth-child(1) > a > .bg-white > .col-span-3').click();
